@@ -1,0 +1,8 @@
+---
+import {href} from '../lib';
+import '../styles.css';
+const {title='wtf, jared',description='Strategies for enterprise software, open source, and selling to developers',image,type='website',published,modified}=Astro.props;
+const staging=process.env.PRODUCTION!=='true';
+const canonical=new URL(Astro.url.pathname,Astro.site);
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title === 'wtf, jared' ? title : `${title} — wtf, jared`}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/>{staging&&<meta name="robots" content="noindex, nofollow"/>}<meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:type" content={type}/>{image&&<meta property="og:image" content={new URL(href(image),Astro.site)}/>}<meta name="twitter:card" content={image?'summary_large_image':'summary'}/>{published&&<meta property="article:published_time" content={published}/>} {modified&&<meta property="article:modified_time" content={modified}/>}<link rel="alternate" type="application/rss+xml" title="wtf, jared" href={href('rss/')}/></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="wordmark" href={href()}>wtf, jared<span>.</span></a><nav aria-label="Main"><a href={href()}>Essays</a><a href={href('author/jared/')}>About</a><a href={href('rss/')}>RSS ↗</a></nav></header><main id="main"><slot/></main><footer class="site-footer"><span>© {new Date().getFullYear()} Jared Rosoff</span><span>Ideas worth writing down.</span></footer></body></html>

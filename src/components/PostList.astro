@@ -1,0 +1,5 @@
+---
+import {href,dateLabel,tagSlug} from '../lib';
+const {posts}=Astro.props;
+---
+<div class="post-list">{posts.map(p=><article class="post-summary"><div class="post-meta"><time datetime={p.data.displayDate}>{dateLabel(p.data.displayDate)}</time><span>{p.data.tags[0]}</span></div><div><h2><a href={href(p.data.slug+'/')}>{p.data.title}</a></h2><p>{p.data.description.slice(0,210)}{p.data.description.length>210?'…':''}</p><a class="read" href={href(p.data.slug+'/')}>Read essay <span aria-hidden="true">↗</span></a></div></article>)}</div>

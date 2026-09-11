@@ -1,0 +1,8 @@
+---
+import {render} from 'astro:content';
+import Base from '../layouts/Base.astro';
+import {posts,href,dateLabel,tagSlug} from '../lib';
+export async function getStaticPaths(){return (await posts()).map(post=>({params:{slug:post.data.slug},props:{post}}));}
+const {post}=Astro.props;const {Content}=await render(post);const p=post.data;
+---
+<Base title={p.title} description={p.description} image={p.image} type="article" published={p.date} modified={p.modified}><article class="essay"><header class="essay-header"><div class="topics">{p.tags.map(t=><a href={href('tag/'+tagSlug(t)+'/')}>{t}</a>)}</div><h1>{p.title}</h1><p class="byline"><a href={href('author/jared/')}>Jared Rosoff</a> <span> / </span><time datetime={p.displayDate}>{dateLabel(p.displayDate)}</time></p></header>{p.image&&<img class="hero" src={href(p.image)} alt={p.title} fetchpriority="high"/>}<div class="prose"><Content/></div><a class="back" href={href()}>← All essays</a></article></Base>

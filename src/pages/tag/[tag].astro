@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import {posts,tagSlug} from '../../lib';
+export async function getStaticPaths(){const all=await posts();return [...new Set(all.flatMap(p=>p.data.tags))].map(tag=>({params:{tag:tagSlug(tag)},props:{tag,items:all.filter(p=>p.data.tags.includes(tag))}}));}
+const {tag,items}=Astro.props;
+---
+<Base title={tag}><section class="intro"><p class="eyebrow">TOPIC</p><h1>{tag}</h1></section><PostList posts={items}/></Base>

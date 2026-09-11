@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import author from '../../data/author.json';
+import {posts,href} from '../../lib';
+const all=await posts();
+---
+<Base title={author.name} description={author.bio} image={author.image}><section class="intro author"><img src={href(author.image)} alt={author.name} width="112" height="112"/><p class="eyebrow">ABOUT THE AUTHOR</p><h1>{author.name}</h1><p class="lede">{author.bio}</p></section><PostList posts={all}/></Base>

@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import {posts,href,tagSlug} from '../lib';
+const all=await posts(); const tags=[...new Set(all.flatMap(p=>p.data.tags))];
+---
+<Base><section class="intro"><p class="eyebrow">JARED ROSOFF / ESSAYS</p><h1>Software. Communities.<br/>The business in between.</h1><p class="lede">Strategies for enterprise software, open source, and selling to developers.</p><div class="topics">{tags.map(t=><a href={href('tag/'+tagSlug(t)+'/')}>{t}</a>)}</div></section><section aria-label="Essays"><div class="section-label"><span>THE ARCHIVE</span><span>{all.length} ESSAYS</span></div><PostList posts={all}/></section></Base>

@@ -1,0 +1,2 @@
+import {posts,href,tagSlug} from '../lib';
+export async function GET({site}){const all=await posts();const routes=['','author/jared/',...all.map(p=>p.data.slug+'/'),...[...new Set(all.flatMap(p=>p.data.tags))].map(t=>'tag/'+tagSlug(t)+'/')];return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>`<url><loc>${new URL(href(r),site)}</loc></url>`).join('')+'</urlset>',{headers:{'Content-Type':'application/xml'}});}
