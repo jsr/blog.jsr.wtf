@@ -1,12 +1,6 @@
 {
   "name": "Jared Rosoff",
-  "bio": "I build the infrastructure that other people build on.
-
-I've been doing versions of the same job for 25 years. I left Brown to co-found Tazz Networks, where we built a programmable control plane for the internet — Cisco resold it, and we grew to ~100 people. I joined MongoDB as employee #25 and built its first technical go-to-market teams as it scaled from 25 to 500 employees. At VMware I worked on bringing Kubernetes into the core platform, and at Google I helped build the PM function for compute infrastructure — Borg, the Linux kernel, Cloud GPUs and TPUs.
-
-Today I’m VP of Product at Roblox, leading the infrastructure and AI organizations. Since I joined, the fleet has tripled to more than 150,000 servers across 25 data centers on four continents, supporting bookings growth from $2.9B to $6.8B — with infrastructure operating costs held nearly flat through 2024, then deliberately ramped into AI and GPUs. I am responsible for Roblox’s cost to serve, player uptime, and employee productivity.
-
-The common thread: I work at the layer where product and engineering are the same conversation — deeply technical systems where the product decisions are architecture decisions — and where those decisions have material impact on our P&L. ",
+  "bio": "I build the infrastructure that other people build on. I've been doing versions of the same job for 25 years. I left Brown to co-found Tazz Networks, where we built a programmable control plane for the internet — Cisco resold it, and we grew to ~100 people. I joined MongoDB as employee #25 and built its first technical go-to-market teams as it scaled from 25 to 500 employees. At VMware I worked on bringing Kubernetes into the core platform, and at Google I helped build the PM function for compute infrastructure — Borg, the Linux kernel, Cloud GPUs and TPUs. Today I’m VP of Product at Roblox, leading the infrastructure and AI organizations. Since I joined, the fleet has tripled to more than 150,000 servers across 25 data centers on four continents, supporting bookings growth from $2.9B to $6.8B — with infrastructure operating costs held nearly flat through 2024, then deliberately ramped into AI and GPUs. I am responsible for Roblox’s cost to serve, player uptime, and employee productivity. The common thread: I work at the layer where product and engineering are the same conversation — deeply technical systems where the product decisions are architecture decisions — and where those decisions have material impact on our P&L. ",
   "image": "/media/59a391b4535da7fe.jpeg",
   "location": "Palo Alto, CA"
 }
